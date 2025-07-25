@@ -1,0 +1,118 @@
+{
+  "Fruits": [
+    {
+      "question": "Apfel oder Banane?",
+      "img1": "images/apple.jpg",
+      "img2": "images/banana.jpg"
+    },
+    {
+      "question": "Erdbeere oder Kirsche?",
+      "img1": "images/strawberry.jpg",
+      "img2": "images/cherry.jpg"
+    },
+    {
+      "question": "Ananas oder Mango?",
+      "img1": "images/pineapple.jpg",
+      "img2": "images/mango.jpg"
+    },
+    {
+      "question": "Wassermelone oder Honigmelone?",
+      "img1": "images/watermelon.jpg",
+      "img2": "images/honeydew.jpg"
+    },
+    {
+      "question": "Traube oder Heidelbeere?",
+      "img1": "images/grape.jpg",
+      "img2": "images/blueberry.jpg"
+    },
+    {
+      "question": "Orange oder Grapefruit?",
+      "img1": "images/orange.jpg",
+      "img2": "images/grapefruit.jpg"
+    },
+    {
+      "question": "Pfirsich oder Nektarine?",
+      "img1": "images/peach.jpg",
+      "img2": "images/nectarine.jpg"
+    }
+  ],
+  "couples": [
+    {
+      "question": "Netflix oder Kinoabend?",
+      "img1": "images/netflix.jpg",
+      "img2": "images/cinema.jpg"
+    },
+    {
+      "question": "Strandurlaub oder Städtetrip?",
+      "img1": "images/beach.jpg",
+      "img2": "images/citytrip.jpg"
+    },
+    {
+      "question": "Kochen oder Essen gehen?",
+      "img1": "images/cooking.jpg",
+      "img2": "images/restaurant.jpg"
+    },
+    {
+      "question": "Morgens kuscheln oder abends?",
+      "img1": "images/morning.jpg",
+      "img2": "images/evening.jpg"
+    },
+    {
+      "question": "Romantischer Film oder Actionfilm?",
+      "img1": "images/romance.jpg",
+      "img2": "images/action.jpg"
+    },
+    {
+      "question": "Spazieren gehen oder zusammen chillen?",
+      "img1": "images/walk.jpg",
+      "img2": "images/chill.jpg"
+    },
+    {
+      "question": "Früh ins Bett oder lange wach bleiben?",
+      "img1": "images/sleep_early.jpg",
+      "img2": "images/stay_late.jpg"
+    }
+  ],
+  "Travel Dreams": [
+    {
+      "question": "Strand oder Berge",
+      "img1": "https://pixabay.com/get/g714b147a7fd6703fd2686ccf889645299404b96e2b6c1ead97aa6fee12c9cc0c8d041848c9deb115c65101e95fae33c6b879a82a7bf3969af421c3700e3f7029_640.jpg",
+      "img2": "https://pixabay.com/get/ge7bac1522c3084219d8855cd93deae6561aa367a1941a2a9fd941f845873c7048585c99c664297d95867dcc7e500d00591b883e887b09456c29583e894c75408_640.jpg"
+    },
+    {
+      "question": "New York oder Tokyo",
+      "img1": "https://pixabay.com/get/gf639d6d26e4f768b57e4ade00d85ed544921ba938b35d34f3c3843e3511799f13928f91b7f2f3623950ce84966a083ade1bcf9079e4a977b76af3e331cedb28f_640.jpg",
+      "img2": "https://pixabay.com/get/gd19bfc5b586c3d8db4a305d479ecfaecb8ee3b887805fb75dc787e349cabced805f2ab3754e82f48410ab7ccf501ef8cd285963b777e8e35ec3fb01398742d8e_640.jpg"
+    },
+    {
+      "question": "Roadtrip oder Flugreise",
+      "img1": "https://pixabay.com/get/g97e1e57f81c83a0c6914b030fb3c6fed573ea96884e0410ed974107c043528390097f469734bb6575507eeab110b03faec68936a913cdd46c59e94b2a29fd1e8_640.jpg",
+      "img2": "https://pixabay.com/get/g0be7098207df9efa88063b8934c4f3f6642d5941e6cdb8b97c3c4a4087db6b0a8f3299d3caa8da3cba32a5188862a35d3f6f56d61d3e9ae097544a817f068011_640.jpg"
+    },
+    {
+      "question": "Safari oder Dschungel",
+      "img1": "https://pixabay.com/get/gde817e2a323daafbd73a080c2d3e5dc72d569f967924fbfd5265718ae253198146ac7b99260d8d0cdbc92d04abbc7fe5_640.jpg",
+      "img2": "https://pixabay.com/get/ge2a187a12c4a5a14902250c0955cb4479c8d1fb1f77670015965c22df9b9cee7cbf251b818113dac04c57feee2e7a05b846e76d0298dc61d0b0169835f12f49d_640.jpg"
+    },
+    {
+      "question": "Zelten oder Hotel",
+      "img1": "https://pixabay.com/get/gc3877f656a78faa16b3d7fd232382f4201ffd576af9ae2e1f7fc74aabe2f6f211d8155abfc868f27fcca20119762e847dff5b8a492f5c1ed5827f9a08095d07b_640.jpg",
+      "img2": "https://pixabay.com/get/g0cc9da72beef3c77558a8f4efe1158afcb315b18c4dc0f5ff90d2601e085f7cf665812a065df90154766785a04a1978b3255a3f9f6eac9cfe76dbcd61a30dcd0_640.jpg"
+    },
+    {
+      "question": "Island oder Thailand",
+      "img1": "https://pixabay.com/get/gc4e3d0f6007eb21a8b726a996a19ed1fa7b17c18681fbeb9fda5c8e35bcac9979f06f5119a8c28d24bf7d77367b06c35b716ddb3f279b00182259ab69d9ac62e_640.jpg",
+      "img2": "https://pixabay.com/get/gb1eff169ac698fecf37f61339788b23bee7d87bb730f0666f820b8c53be21fc0073c5937c70eaa4ba4dc28c0b68828c3fa6a27e22bb644bfdfb74c826a41f1a1_640.jpg"
+    },
+    {
+      "question": "Fahrrad oder Motorrad",
+      "img1": "https://pixabay.com/get/g304908cf8ce57ce6d702ff21725caf13a63b3eda46bb9ff287b3f29515c827dd85508327d5f88bc18173e47aaea7bc95d4da77f2d216b88ef85e4dcdc21fa056_640.jpg",
+      "img2": "https://pixabay.com/get/g908adaf1a3adb292360e2cb7a13708f9b37a5e4c6b0cf52e6d64f0c07c29a1ca4081790dbf84ff2a98cd61a1bafdaf8912f955d1bbb5d30aa3e7a05da789c926_640.jpg"
+    },
+    {
+      "question": "Citytrip oder Natururlaub",
+      "img1": "https://pixabay.com/get/g3926633bc41b31e7ee860524ad86860809184daaf8a740baf3fdaba691246930d2dc5d0365857816c68e2d9a17f6f00e8838206dfaab5b710d5d407ae3b31af3_640.jpg",
+      "img2": "https://pixabay.com/get/g23aacc80605161622278db9737a82d5ad308d810a881ebe31d5c76400d21099bf88b2297b8384a717e84b7069b6709ec02604a15e9237503abdeb8ae9e544134_640.jpg"
+    }
+  ]
+}

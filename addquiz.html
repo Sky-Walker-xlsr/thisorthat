@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neues Quiz hinzufügen</title>
+  <link rel="icon" type="image/x-icon" href="images/icon.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo" class="site-logo">
+    </div>
+    <a href="dashboard.html" class="nav-button">🏠 Dashboard</a>
+  </header>
+
+  <div class="container">
+    <h2>Neues Quiz hinzufügen:</h2>
+    <form id="quizForm">
+      <label for="quizname">Neuer Quiz Name:</label>
+      <input type="text" id="quizname" name="quizname" placeholder="Bsp. Fruits (keine Umlaute)" required
+        autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+      <div id="questionsContainer">
+        <!-- Frageblöcke werden dynamisch per JS eingefügt -->
+      </div>
+
+      <button id="add-question-btn" class="button">➕ Weitere Frage hinzufügen</button>
+      <p id="status"></p>
+      <h2 class="button-row">
+        <button type="submit" class="button">Speichern</button>
+        <button onclick="history.back()" class="button">Zurück</button>
+      </h2>
+
+      <p id="status"></p>
+    </form>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/addquiz.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ergebnisse</title>
+  <link rel="icon" type="image/x-icon" href="images/icon.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Fester Header mit Dashboard-Link -->
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo" class="site-logo">
+    </div>
+    <a href="dashboard.html" class="nav-button">🏠 Dashboard</a>
+  </header>
+
+  <!-- Hauptinhalt -->
+  <div class="container">
+    <h1>Ergebnisvergleich</h1>
+    <div id="results">Wird geladen...</div>
+
+    <!-- Chatbereich -->
+    <div id="chatBox">
+      <h3>Diskussion</h3>
+      <div id="chatHeader" class="chat-header">
+        <span class="chat-name left">Yannick</span>
+        <span class="chat-name right">Amélie</span>
+      </div>
+      <div id="chatMessages" class="chat-messages"></div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Nachricht schreiben..." autocomplete="off" autocorrect="off"
+          autocapitalize="off" spellcheck="false">
+        <button onclick="sendMessage()" class="chat-send-button">Senden</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

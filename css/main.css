@@ -1,0 +1,463 @@
+/* oder was du willst */
+:root {
+  --radius: 20px;
+  /* hier kannst du später z.B. 16px oder 2xl oder 50% setzen */
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #0a0a23;
+  color: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 10px 20px;
+  background-color: #0a0a23;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.site-logo {
+  width: 40px;
+  /* oder was du willst */
+  height: 40px;
+  border-radius: 11px;
+  /* das macht's rund */
+  object-fit: cover;
+  /* falls das Bild nicht quadratisch ist */
+  margin-right: 10px;
+  /* Abstand zum Text */
+  margin-top: 10px;
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  /* doppelt so groß */
+  height: 100px;
+  border-radius: var(--radius);
+  background-color: #4B00B5;
+  /* dein dunkles Lila */
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  z-index: 999;
+}
+
+.fab-button:hover {
+  transform: scale(1.05);
+}
+
+.fab-button span {
+  font-size: 64px;
+  /* extra groß */
+  color: #9e6fff;
+  /* helleres Lila für das "+" */
+  line-height: 1;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  /* schön rundes Plus */
+  user-select: none;
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.quiz-container-wide {
+  max-width: 1600px;
+}
+
+.button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #4444aa;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  border-radius: 10px;
+  border: none;
+}
+
+.error {
+  color: red;
+}
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+@media (max-width: 1000px) {
+  .quiz-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.quiz-container {
+  padding-top: 40px;
+}
+
+.quiz-images {
+  display: flex;
+  flex-direction: row;
+  /* <--- das brauchst du */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.quiz-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  max-height: 600px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.image-wrapper {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background-color: #fff;
+  /* oder transparent */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.or-circle {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: white;
+  color: #0a0a23;
+  padding: 15px 20px;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 768px) {
+  .quiz-images {
+    flex-direction: column;
+  }
+
+  .quiz-img {
+    width: 80%;
+  }
+}
+
+
+.nav-button {
+  background-color: #4444aa;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #222288;
+}
+
+/* chat-box */
+body {
+  padding-top: 60px;
+  /* Platz für Header */
+}
+
+/* Chatbox an rechten Rand */
+#chatBox {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: #1a1a3d;
+  padding: 15px;
+  border-radius: var(--radius);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+/* Chat-Nachrichtenbereich */
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Inputzeile mit Button */
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+#chatInput {
+  flex-grow: 1;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: var(--radius);
+  border: none;
+}
+
+/* Senden-Button */
+.chat-send-button {
+  background-color: #4444aa;
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chat-send-button:hover {
+  background-color: #333399;
+}
+
+/* Nachrichten-Design */
+.chat-message {
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* Yannick links */
+.chat-message.yannick {
+  align-self: flex-start;
+  background-color: #333366;
+  color: white;
+  border-top-left-radius: 0;
+}
+
+/* Amélie rechts */
+.chat-message.amelie {
+  align-self: flex-end;
+  background-color: #6666aa;
+  color: white;
+  border-top-right-radius: 0;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 5px;
+  color: #ccc;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.chat-name.left {
+  text-align: left;
+}
+
+.chat-name.right {
+  text-align: right;
+}
+
+.quiz-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: var(--radius);
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  min-height: 100px;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.quiz-card:hover {
+  transform: scale(1.03);
+}
+
+
+.quiz-img {
+  pointer-events: auto;
+}
+
+.result-compare-header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 450px;
+  margin: 0 auto 20px auto;
+  padding-top: 10px;
+  gap: 20px;
+}
+
+.user-label {
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.result-question-center {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result-answer {
+  width: 50%;
+  text-align: center;
+}
+
+.result-answer img {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.invisible {
+  visibility: hidden;
+  height: 24px;
+  /* Höhe für Zeilenabstand */
+}
+
+/* == adquiz.html == */
+.question-block {
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px dashed #444;
+  border-radius: var(--radius);
+}
+
+#add-question-btn {
+  cursor: pointer;
+  margin-top: 30px;
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #8884d8;
+  /* dezentes Lila */
+  color: #8884d8;
+  padding: 8px 14px;
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  border-radius: var(--radius);
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#add-question-btn:hover {
+  background-color: rgba(136, 132, 216, 0.1);
+  border-color: #a89ff0;
+  color: #a89ff0;
+}
+
+.remove-question-btn {
+  float: right;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: red;
+  cursor: pointer;
+  margin-top: -10px;
+  margin-right: -10px;
+}
+
+#add-btn-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button-row {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.button-row .button {
+  font-size: 1em;
+}
