@@ -36,7 +36,7 @@
       "img2": "images/nectarine.jpg"
     }
   ],
-  "couples": [
+  "Preferences": [
     {
       "question": "Netflix oder Kinoabend?",
       "img1": "images/netflix.jpg",
@@ -66,11 +66,6 @@
       "question": "Spazieren gehen oder zusammen chillen?",
       "img1": "images/walk.jpg",
       "img2": "images/chill.jpg"
-    },
-    {
-      "question": "Früh ins Bett oder lange wach bleiben?",
-      "img1": "images/sleep_early.jpg",
-      "img2": "images/stay_late.jpg"
     }
   ],
   "Travel Dreams": [

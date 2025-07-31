@@ -2,8 +2,8 @@
 
 // 🟢 Benutzer-Login-Daten
 const users = [
-  { username: "Amelie", password: "05.07.2025" },
-  { username: "Yannick", password: "05.07.2025" }
+  { username: "User1", password: "56347812" },
+  { username: "User2", password: "56347812" }
 ];
 
 // 🟢 Nützliche URL- und User-Infos
