@@ -56,7 +56,7 @@ function initApp() {
       img2.src = q.img2;
 
       // Fortschrittszähler aktualisieren
-      const progressText = `Frage ${index + 1} von ${quizData.length}`;
+      const progressText = `${index + 1} / ${quizData.length}`;
       const progressEl = document.getElementById("progress-counter");
       if (progressEl) progressEl.textContent = progressText;
     }
@@ -107,6 +107,21 @@ function initApp() {
           <div class="user-label">${user2}</div>
         </div>
       `;
+
+        // Übereinstimmung berechnen
+        let matches = 0;
+        for (let i = 0; i < quizData.length; i++) {
+          if (answers1[i] === answers2[i]) matches++;
+        }
+        const total = quizData.length;
+        const percent = Math.round((matches / total) * 100);
+
+        const scoreEl = document.getElementById("matchScore");
+        if (scoreEl) {
+          scoreEl.innerText = `🟢 Übereinstimmung: ${percent}%`;
+        }
+
+
 
         quizData.forEach((q, i) => {
           const choice1 = answers1[i] === "left" ? q.img1 : q.img2;
