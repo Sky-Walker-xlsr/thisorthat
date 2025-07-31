@@ -54,7 +54,13 @@ function initApp() {
       questionEl.textContent = q.question;
       img1.src = q.img1;
       img2.src = q.img2;
+
+      // Fortschrittszähler aktualisieren
+      const progressText = `Frage ${index + 1} von ${quizData.length}`;
+      const progressEl = document.getElementById("progress-counter");
+      if (progressEl) progressEl.textContent = progressText;
     }
+
 
     function select(choice) {
       answers[index] = choice;
@@ -78,35 +84,35 @@ function initApp() {
     loadQuestion();
   }
 
-// === RESULTS-SEITE mit zentrierten Namen & Frage ===
-if (location.pathname.includes("results.html") && quizName) {
-  const resultDiv = document.getElementById("results");
+  // === RESULTS-SEITE mit zentrierten Namen & Frage ===
+  if (location.pathname.includes("results.html") && quizName) {
+    const resultDiv = document.getElementById("results");
 
-  fetch(`/api/load?quiz=${quizName}`)
-    .then(res => res.json())
-    .then(data => {
-      const quizData = quizzes[quizName];
-      if (!quizData || data === null || Object.keys(data).length < 2) {
-        resultDiv.innerHTML = "<p>Mindestens zwei Ergebnisse nötig für den Vergleich.</p>";
-        return;
-      }
+    fetch(`/api/load?quiz=${quizName}`)
+      .then(res => res.json())
+      .then(data => {
+        const quizData = quizzes[quizName];
+        if (!quizData || data === null || Object.keys(data).length < 2) {
+          resultDiv.innerHTML = "<p>Mindestens zwei Ergebnisse nötig für den Vergleich.</p>";
+          return;
+        }
 
-      const [user1, user2] = Object.keys(data); // z. B. Yannick & Amélie
-      const answers1 = data[user1];
-      const answers2 = data[user2];
+        const [user1, user2] = Object.keys(data); // z. B. Yannick & Amélie
+        const answers1 = data[user1];
+        const answers2 = data[user2];
 
-      let html = `
+        let html = `
         <div class="result-compare-header">
           <div class="user-label">${user1}</div>
           <div class="user-label">${user2}</div>
         </div>
       `;
 
-      quizData.forEach((q, i) => {
-        const choice1 = answers1[i] === "left" ? q.img1 : q.img2;
-        const choice2 = answers2[i] === "left" ? q.img1 : q.img2;
+        quizData.forEach((q, i) => {
+          const choice1 = answers1[i] === "left" ? q.img1 : q.img2;
+          const choice2 = answers2[i] === "left" ? q.img1 : q.img2;
 
-        html += `
+          html += `
           <div class="result-question-center">${q.question}</div>
           <div class="result-row">
             <div class="result-answer">
@@ -117,15 +123,15 @@ if (location.pathname.includes("results.html") && quizName) {
             </div>
           </div>
         `;
-      });
+        });
 
-      resultDiv.innerHTML = html;
-    })
-    .catch(err => {
-      resultDiv.innerHTML = "<p>Fehler beim Laden der Ergebnisse.</p>";
-      console.error(err);
-    });
-}
+        resultDiv.innerHTML = html;
+      })
+      .catch(err => {
+        resultDiv.innerHTML = "<p>Fehler beim Laden der Ergebnisse.</p>";
+        console.error(err);
+      });
+  }
 
 
   // === DASHBOARD-SEITE ===
@@ -164,80 +170,80 @@ if (location.pathname.includes("results.html") && quizName) {
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-  const testBtn = document.getElementById("test-save-button");
-  if (testBtn) {
-    testBtn.addEventListener("click", async () => {
-      const res = await fetch("/api/save.js", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          action: "githubTestSave"
-        })
+    const testBtn = document.getElementById("test-save-button");
+    if (testBtn) {
+      testBtn.addEventListener("click", async () => {
+        const res = await fetch("/api/save.js", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            action: "githubTestSave"
+          })
+        });
+
+        const result = await res.json();
+        alert(result.message || "Fertig.");
       });
-
-      const result = await res.json();
-      alert(result.message || "Fertig.");
-    });
-  }
-});
-
-
-// === CHAT (nur auf results.html) ===
-const chatBox = document.getElementById("chatMessages");
-const chatInput = document.getElementById("chatInput");
-
-chatInput?.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    sendMessage();
-  }
-});
-
-// 💡 Aktuell eingeloggter Benutzer
-const currentUser = sessionStorage.getItem("username") || "Yannick";
-
-// Funktion zum Senden einer Nachricht
-window.sendMessage = function () {
-  const msg = chatInput.value.trim();
-  if (!msg) return;
-
-  fetch("/api/save", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      quiz: quizName,
-      user,
-      text: msg
-    })
-  }).then(() => {
-    renderMessage(msg, user);
-    chatInput.value = "";
+    }
   });
-};
 
 
+  // === CHAT (nur auf results.html) ===
+  const chatBox = document.getElementById("chatMessages");
+  const chatInput = document.getElementById("chatInput");
 
-// Funktion zur Darstellung einer Nachricht
-function renderMessage(text, fromUser) {
-  const msgDiv = document.createElement("div");
-  msgDiv.className = `chat-message ${fromUser.toLowerCase()}`;
-  msgDiv.textContent = text;
-  chatBox.appendChild(msgDiv);
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
+  chatInput?.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
 
-// Nachrichten laden beim Start
-if (chatBox) {
-  fetch(`/api/load?quiz=${quizName}`)
-    .then(res => res.json())
-    .then(data => {
-      const messages = data._chat || {};
-      Object.values(messages).forEach(m => {
-        renderMessage(m.text, m.user);
-      });
+  // 💡 Aktuell eingeloggter Benutzer
+  const currentUser = sessionStorage.getItem("username") || "Yannick";
+
+  // Funktion zum Senden einer Nachricht
+  window.sendMessage = function () {
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+
+    fetch("/api/save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        quiz: quizName,
+        user,
+        text: msg
+      })
+    }).then(() => {
+      renderMessage(msg, user);
+      chatInput.value = "";
     });
-}
+  };
+
+
+
+  // Funktion zur Darstellung einer Nachricht
+  function renderMessage(text, fromUser) {
+    const msgDiv = document.createElement("div");
+    msgDiv.className = `chat-message ${fromUser.toLowerCase()}`;
+    msgDiv.textContent = text;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  // Nachrichten laden beim Start
+  if (chatBox) {
+    fetch(`/api/load?quiz=${quizName}`)
+      .then(res => res.json())
+      .then(data => {
+        const messages = data._chat || {};
+        Object.values(messages).forEach(m => {
+          renderMessage(m.text, m.user);
+        });
+      });
+  }
 }
 
