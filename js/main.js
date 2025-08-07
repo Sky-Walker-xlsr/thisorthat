@@ -9,7 +9,12 @@ const users = [
 // 🟢 Nützliche URL- und User-Infos
 const params = new URLSearchParams(location.search);
 const quizName = params.get("quiz");
-const user = localStorage.getItem("user");
+let user = localStorage.getItem("user");
+
+// 🚫 Wenn kein User gespeichert ist und wir nicht auf login.html sind → zurück zum Login
+if (!location.pathname.endsWith("login.html") && !user) {
+  location.href = "login.html";
+}
 
 // === LOGIN-FUNKTION (nur auf login.html aktiv) ===
 document.getElementById("loginForm")?.addEventListener("submit", function (e) {
@@ -262,3 +267,8 @@ function initApp() {
   }
 }
 
+// === LOGOUT-Button verfügbar machen
+window.logout = function () {
+  localStorage.removeItem("user");
+  location.href = "login.html";
+};

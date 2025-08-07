@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
   <link rel="icon" type="image/x-icon" href="images/icon.png">
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  <!-- 🔒 Auto-Redirect falls schon eingeloggt -->
+  <script>
+    if (localStorage.getItem("user")) {
+      window.location.href = "dashboard.html";
+    }
+  </script>
 </head>
+
 <body>
-        <!-- Fester Header mit Dashboard-Button -->
+  <!-- Fester Header mit Dashboard-Button -->
   <header class="site-header">
     <div class="logo-container">
       <img src="images/logo.png" alt="Logo" class="site-logo">
@@ -25,6 +34,8 @@
     </form>
     <p id="errorMsg" class="error"></p>
   </div>
+
   <script src="js/main.js"></script>
 </body>
+
 </html>
