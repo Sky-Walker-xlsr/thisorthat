@@ -378,14 +378,14 @@ form input {
     word-wrap: break-word;
 }
 
-.chat-message.yannick {
+.chat-message.user2 {
     align-self: flex-start;
     background-color: #333366;
     color: white;
     border-top-left-radius: 0;
 }
 
-.chat-message.amelie {
+.chat-message.user1 {
     align-self: flex-end;
     background-color: #6666aa;
     color: white;
