@@ -141,5 +141,12 @@
       "img1": "https://pixabay.com/get/g1516e8f6f990ce3272cced68cf84453b7f00d0c424cbecca7c8dc5051c5d3468423a198c940bd7f92119e2d6c399887644e123395676169a384b9831a882a4bc_640.jpg",
       "img2": "https://pixabay.com/get/gd83367256f3259f157d6c3759d407485727daa6886cb14a64fce1d711d57daa3e4b91b849319116ace82a764d34c6b91bb4a45dacad209893f40bbdd9a3bed6b_640.jpg"
     }
+  ],
+  "Alc": [
+    {
+      "question": "Grappa oder Wein",
+      "img1": "https://pixabay.com/get/g826aae82a14d96e5e3b22a3d57aca6239430031be149645d29b68fceb4dded77fb022685eee49541d69327180c1119123cb2f53908c4d9e069680c82cfd0e633_1280.jpg",
+      "img2": "https://pixabay.com/get/g54ad62b351ffde26790b68e2c5a1f74b573874da533ae0abecaa9bbff3d9c5b3a8e9a6542af7500237fa5fdcba55697124ab084f1f9b39db7b417d9ac3b2a1ff_1280.jpg"
+    }
   ]
 }
