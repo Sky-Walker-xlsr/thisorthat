@@ -38,6 +38,13 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.header-buttons {
+  margin-left: auto;       /* schiebt Buttons ganz nach rechts */
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 .nav-button:hover,
 .chat-send-button:hover,
 .fab-button:hover,
