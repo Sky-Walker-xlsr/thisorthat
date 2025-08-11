@@ -102,7 +102,7 @@ function initApp() {
           return;
         }
 
-        const [user1, user2] = Object.keys(data); // z. B. Yannick & Amélie
+        const [user1, user2] = Object.keys(data); // z. B. user1 & user2
         const answers1 = data[user1];
         const answers2 = data[user2];
 
