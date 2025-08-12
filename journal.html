@@ -15,15 +15,32 @@
             <img src="images/logo.png" alt="Logo" class="site-logo">
         </div>
         <nav class="nav-actions">
-            <a href="dashboard.html" class="nav-button">Dashboard</a>
-            <a href="#" onclick="event.preventDefault(); logout();" class="nav-button">Logout</a>
+            <a href="dashboard.html" class="nav-button">🏠 Dashboard</a>
         </nav>
     </header>
 
-    <main class="container" style="padding-top: 80px;">
+    <main class="container">
         <h1>Journal</h1>
-        <p class="muted">Hier kommt später der Inhalt hin...</p>
+
+        <!-- Memory-Form -->
+        <form id="memoryForm" style="margin:16px 0;">
+            <div style="display:grid; gap:12px;">
+                <input id="memTitle" type="text" placeholder="Titel" required />
+                <input id="memImage" type="url" placeholder="Bild-URL (optional)" />
+                <input id="memPlace" type="text" placeholder="Ort (optional)" />
+                <textarea id="memDesc" rows="4" placeholder="Beschreibung" required></textarea>
+                <button type="submit" class="button">Memory hinzufügen</button>
+            </div>
+        </form>
+
+        <!-- Liste -->
+        <div id="memoryList" class="memory-list"></div>
     </main>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/journal.js"></script>
+
 
     <script src="main.js"></script>
 </body>

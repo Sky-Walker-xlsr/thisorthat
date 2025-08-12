@@ -554,3 +554,120 @@ form input {
     }
 
 }
+
+/* ============================================
+   Journal 
+============================================ */
+
+.memory-list {
+  display: grid;
+  gap: 16px;
+  text-align: left;            /* Cards nicht zentrieren */
+}
+
+/* Card */
+.memory-card {
+  position: relative;
+  background: #1a1a3d;
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.memory-inner {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.memory-media img {
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.memory-body {
+  flex: 1 1 auto;
+}
+
+.memory-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.memory-title {
+  margin: 0;
+}
+
+.memory-meta {
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+.memory-desc {
+  margin: 8px 0 0 0;
+  white-space: pre-wrap;
+}
+
+/* Kommentar-Liste */
+.memory-comments {
+  margin-top: 10px;
+}
+.comment-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+.comment-item {
+  font-size: 0.95em;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+}
+.comment-meta {
+  color: #ccc;
+  font-size: 0.85em;
+}
+.comment-text { white-space: pre-wrap; }
+
+/* Kommentar-Badge (aussen angeheftet) */
+.comment-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  font-size: 0.85em;
+}
+
+/* Form-Overrides: innerhalb Journal volle Breite */
+#memoryForm input,
+#memoryForm textarea,
+.commentForm input {
+  width: 100%;
+  margin: 0;
+}
+
+.commentForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Mobile: Media + Body untereinander */
+@media (max-width: 768px) {
+  .memory-inner {
+    flex-direction: column;
+  }
+  .memory-media img {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+  }
+}
