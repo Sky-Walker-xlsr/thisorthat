@@ -671,3 +671,138 @@ form input {
     max-height: 240px;
   }
 }
+
+/* ============================================
+   DRAW A DATE (draw_a_date.html)
+============================================ */
+.date-container {
+    max-width: 960px;
+}
+
+.date-subtitle {
+    margin-top: -10px;
+    color: #c3c6ff;
+}
+
+.date-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 25px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.date-form label,
+.date-draw-controls label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.date-form textarea,
+.date-form select,
+.date-draw-controls select {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    padding: 12px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.date-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.date-message {
+    min-height: 24px;
+    margin-top: 10px;
+}
+
+.date-message.success {
+    color: #7dffa5;
+}
+
+.date-message.error {
+    color: #ff8a80;
+}
+
+.date-ideas {
+    display: grid;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .date-ideas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.date-category {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius);
+    padding: 15px;
+    min-height: 180px;
+}
+
+.date-category h3 {
+    margin-top: 0;
+    color: #ffdf6b;
+}
+
+.date-idea-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.date-idea-list li {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 10px 12px;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.date-idea-list li span {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 6px;
+}
+
+.date-draw-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 340px;
+}
+
+.date-result {
+    margin-top: 20px;
+    min-height: 80px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.date-result span {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
+}

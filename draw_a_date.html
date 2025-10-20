@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard</title>
+  <title>Draw a Date</title>
   <link rel="icon" type="image/x-icon" href="images/icon.png">
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
@@ -11,27 +11,76 @@
 
 <body>
   <!-- Fester Header mit Logout -->
-  <header class="site-header">
-    <div class="logo-container">
-      <img src="images/logo.png" alt="Logo" class="site-logo">
-    </div>
-    <div class="header-buttons">
-      <a href="journal.html" class="nav-button">Journal</a>
-      <a href="draw_a_date.html" class="nav-button">Draw a Date</a>
-      <a href="#" onclick="event.preventDefault(); logout();" class="nav-button">Logout</a>
-    </div>
-  </header>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="site-logo">
+        </div>
+        <nav class="nav-actions">
+            <a href="dashboard.html" class="nav-button">🏠 Dashboard</a>
+        </nav>
+    </header>
 
-  <div class="container">
+  <main class="container date-container">
+    <h1>🎲 Draw a Date</h1>
+    <p class="date-subtitle">Sammelt gemeinsam eure Date-Ideen und lasst das Glück entscheiden!</p>
 
-  </div>
+    <section class="date-section">
+      <h2>Neue Idee speichern</h2>
+      <form id="dateIdeaForm" class="date-form">
+        <label for="dateIdeaInput">Deine Date-Idee</label>
+        <textarea id="dateIdeaInput" rows="3" placeholder="Zum Beispiel: Picknick im Park mit Sonnenuntergang" required></textarea>
 
+        <label for="dateCategorySelect">Kategorie</label>
+        <select id="dateCategorySelect" required>
+          <option value="ganzer_tag">Ganzer Tag</option>
+          <option value="halber_tag">Halber Tag</option>
+          <option value="abend">Abend</option>
+        </select>
 
+        <button type="submit" class="button">Idee speichern</button>
+      </form>
+      <p id="dateSaveMessage" class="date-message" role="status"></p>
+    </section>
 
+    <section class="date-section">
+      <h2>Gespeicherte Ideen</h2>
+      <div class="date-ideas" id="dateIdeasContainer">
+        <div class="date-category" data-category="ganzer_tag">
+          <h3>Ganzer Tag</h3>
+          <ul class="date-idea-list" id="dateList-ganzer_tag"></ul>
+        </div>
+        <div class="date-category" data-category="halber_tag">
+          <h3>Halber Tag</h3>
+          <ul class="date-idea-list" id="dateList-halber_tag"></ul>
+        </div>
+        <div class="date-category" data-category="abend">
+          <h3>Abend</h3>
+          <ul class="date-idea-list" id="dateList-abend"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="date-section">
+      <h2>Date ziehen</h2>
+      <div class="date-draw-controls">
+        <label for="drawCategorySelect">Kategorie auswählen</label>
+        <select id="drawCategorySelect">
+          <option value="all">Alle Kategorien</option>
+          <option value="ganzer_tag">Ganzer Tag</option>
+          <option value="halber_tag">Halber Tag</option>
+          <option value="abend">Abend</option>
+        </select>
+        <button type="button" class="button" id="drawDateButton">Draw a Date</button>
+      </div>
+      <div id="drawResult" class="date-result" role="status" aria-live="polite"></div>
+    </section>
+  </main>
 
 
   <!-- 💡 Zentrale JS-Logik -->
   <script src="js/main.js"></script>
+  <script src="js/draw_a_date.js"></script>
 </body>
 
 </html>
