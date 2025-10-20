@@ -7,6 +7,13 @@
       "timestamp": "2025-10-20T14:33:24.917Z"
     }
   ],
-  "halber_tag": [],
+  "halber_tag": [
+    {
+      "text": "test halber tag",
+      "user": "User2",
+      "category": "halber_tag",
+      "timestamp": "2025-10-20T14:33:38.029Z"
+    }
+  ],
   "abend": []
 }
