@@ -1,5 +1,12 @@
 {
-  "ganzer_tag": [],
+  "ganzer_tag": [
+    {
+      "text": "Test ganzer tag",
+      "user": "User2",
+      "category": "ganzer_tag",
+      "timestamp": "2025-10-20T14:33:24.917Z"
+    }
+  ],
   "halber_tag": [],
   "abend": []
 }
