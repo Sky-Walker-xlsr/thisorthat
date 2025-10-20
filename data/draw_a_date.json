@@ -27,6 +27,12 @@
       "user": "User2",
       "category": "abend",
       "timestamp": "2025-10-20T14:34:24.721Z"
+    },
+    {
+      "text": "test",
+      "user": "User2",
+      "category": "abend",
+      "timestamp": "2025-10-20T14:34:28.388Z"
     }
   ]
 }
